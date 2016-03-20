@@ -1,5 +1,5 @@
 #Old Pascal
-These are some old Pascal-programs I wrote in Vax Pascal or Turbo Pascal between 1987 and 1993.
+These are some old [Pascal](https://en.wikipedia.org/wiki/Pascal_%28programming_language%29)-programs I wrote in Vax Pascal or Turbo Pascal between 1987 and 1992. You can run some of them in an [emulator that is a Java applet: JPC](http://www.df.lth.se.orbin.se/~mikaelb/jpc/pascal.html).
 
 I converted them from [CP437](https://en.wikipedia.org/wiki/Code_page_437) to UTF8 using `iconv`. There is one
 program, pu7.pas, that uses [ISO646-SE](https://en.wikipedia.org/wiki/ISO/IEC_646), but that was not converted
