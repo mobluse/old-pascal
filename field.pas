@@ -57,4 +57,3 @@ begin
          writeln(f, u[i, j]);
    close(f);
 end.
-

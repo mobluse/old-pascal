@@ -85,7 +85,7 @@ begin
 	svar1 :=
 *)
 (*  writeln('* absolutbeloppet av x: |x| *');
-	svar1 := absb(x); (* skriv själv: function absb(x:real):real
+	svar1 := absb(x); // skriv själv: function absb(x:real):real
 *)
 end; (* main *)
 
