@@ -34,7 +34,7 @@ program bank(input,uppdatfil,kundregfil,kontoregfil,output,utfil);
 
    begin
       writeln;
-      write('Tryck Return f|r forts{ttning!');
+      write('Tryck Return för fortsättning!');
       readln(instreng);
       writeln(chr(12),'--- Huvudmeny ---');
       writeln;
@@ -118,7 +118,7 @@ program bank(input,uppdatfil,kundregfil,kontoregfil,output,utfil);
          writeln('--- Kontoslag ---');
          writeln;
          writeln('1. Allemansspar');
-         writeln('2. L|nekonto');
+         writeln('2. Lönekonto');
          writeln('3. Miljonkonto');
          writeln;
          writeln('-----------------');
@@ -159,7 +159,7 @@ program bank(input,uppdatfil,kundregfil,kontoregfil,output,utfil);
                   writeln;
                   write('    Efternamn:');
                   readln(data[2]);
-                  write('      F|rnamn:');
+                  write('      Förnamn:');
                   readln(data[3]);
                   write('   Gatuadress:');
                   readln(data[4]);
@@ -309,12 +309,12 @@ program bank(input,uppdatfil,kundregfil,kontoregfil,output,utfil);
 
       begin
          writeln(chr(12),'--- Uppdatera ---',chr(10));
-         writeln('Skriv p} formen:  kontonr belopp <CR>');
+         writeln('Skriv på formen:  kontonr belopp <CR>');
          writeln('                     .      .    <CR>');
          writeln('                     .      .    <CR>');
-         writeln('                  * <CR>              (Slut p} uppdatering)');
+         writeln('                  * <CR>              (Slut på uppdatering)');
          writeln;
-         write('Uppdatera fr}n fil:(j/n)');
+         write('Uppdatera från fil:(j/n)');
          readln(svar);
          franfil:=svar in ['J','j'];
          if franfil then
@@ -329,7 +329,7 @@ program bank(input,uppdatfil,kundregfil,kontoregfil,output,utfil);
                reset(uppdatfil);
             end;
          writeln('Uppdaterade konton med negativt saldo kan skrivas till ');
-         writeln('fil ist{llet f|r till sk{rm.');
+         writeln('fil istället för till skärm.');
          utriktning(tillfil); 
          writeln;
          while not filslut(franfil) do
@@ -361,7 +361,7 @@ program bank(input,uppdatfil,kundregfil,kontoregfil,output,utfil);
          writeln(chr(12),'--- Utskrift ---');
          writeln;
          writeln('1. Huvudmeny');
-         writeln('6. Vilka konton har person }}mmdd-xxxx');
+         writeln('6. Vilka konton har person ååmmdd-xxxx');
          writeln('7. Vem har konto xx');
          writeln('8. Alla kunder och deras konton');
          writeln;
@@ -378,7 +378,7 @@ program bank(input,uppdatfil,kundregfil,kontoregfil,output,utfil);
             write(fil,'Kontoslag: ');
             case slag of
                1:writeln(fil,'Allemansspar');
-               2:writeln(fil,'L|nekonto');
+               2:writeln(fil,'Lönekonto');
                3:writeln(fil,'Miljonkonto');
             end;
             writeln(fil,'    Saldo:',saldo:15:2);
@@ -644,8 +644,8 @@ program bank(input,uppdatfil,kundregfil,kontoregfil,output,utfil);
 
    begin
       date(datum);
-      writeln(chr(12),'V{lkommen till Mikael Bonnier',chr(39),'s bankprogram!');
-      writeln('Idag {r det den ',datum,'.',chr(10));
+      writeln(chr(12),'Välkommen till Mikael Bonnier',chr(39),'s bankprogram!');
+      writeln('Idag är det den ',datum,'.',chr(10));
       meny;
    end;
 
@@ -660,6 +660,3 @@ begin
    utkontofil;
    utkundfil;
 end. (* bank *)
-
-
-
