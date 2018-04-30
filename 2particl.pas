@@ -1,5 +1,5 @@
 program twoparticle;
-(* TvÜdimensionell tvÜpartikelsimulering *)
+(* Tv√•dimensionell tv√•partikelsimulering *)
 (* SI-enheter *)
 
 uses graph;
@@ -14,15 +14,15 @@ const dt = 0.0005;
       g = -11;
       k = 8.99E9; (* konstanten i Coulombs lag *)
 
-var   F1, F2, (* kraften pÜ partikel 1 frÜn part 2, respektive pÜ 2 frÜn 1. *)
+var   F1, F2, (* kraften p√• partikel 1 fr√•n part 2, respektive p√• 2 fr√•n 1. *)
       a1, a2, (* accelerationen hos 1 resp 2. *)
       v1, v2, (* hastigheten hos 1 resp 2. *)
       r1, r2: array[1..2] of real; (* positionen hos 1 resp 2 *)
       t, (* aktuell tid *)
-      d2, (* kvadraten pÜ avstÜndet mellan 1 och 2 *)
-      C: real; (* faktor fîr att snabba upp berÑkning av Coulombs lag *)
+      d2, (* kvadraten p√• avst√•ndet mellan 1 och 2 *)
+      C: real; (* faktor f√∂r att snabba upp ber√§kning av Coulombs lag *)
       gd, gm: integer; (* graph variables *)
-      n: integer; (* loop rÑknare *)
+      n: integer; (* loop r√§knare *)
 
 begin
    r1[1] := -3;
@@ -50,17 +50,17 @@ begin
       F1[2] := F1[2]+m1*g;
       F2[2] := F2[2]+m2*g;
 
-      a1[1] := F1[1]/m1; (* Newtons 2:a lag fîr partikel 1 *)
+      a1[1] := F1[1]/m1; (* Newtons 2:a lag f√∂r partikel 1 *)
       a1[2] := F1[2]/m1;
       a2[1] := F2[1]/m2; (* -"-     -"- -"- -"- -"-      2 *)
       a2[2] := F2[2]/m2;
 
-      v1[1] := v1[1] + a1[1]*dt; (* ny hastighet fîr partikel 1 *)
+      v1[1] := v1[1] + a1[1]*dt; (* ny hastighet f√∂r partikel 1 *)
       v1[2] := v1[2] + a1[2]*dt;
       v2[1] := v2[1] + a2[1]*dt; (* "  -"-       -"- -"-      2 *)
       v2[2] := v2[2] + a2[2]*dt;
 
-      r1[1] := r1[1] + v1[1]*dt; (* ny position fîr partikel 1 *)
+      r1[1] := r1[1] + v1[1]*dt; (* ny position f√∂r partikel 1 *)
       r1[2] := r1[2] + v1[2]*dt;
       r2[1] := r2[1] + v2[1]*dt; (* "  -"-      -"- -"-      2 *)
       r2[2] := r2[2] + v2[2]*dt;
@@ -76,4 +76,3 @@ begin
    closegraph;
 end.
 
-
