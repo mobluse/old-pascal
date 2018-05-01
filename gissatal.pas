@@ -22,15 +22,14 @@ Begin
       Write('Gissa ett tal: ');
       ReadLn(gissatal);
       If gissatal<slumptal then
-        WriteLn(gissatal,' var fîr litet.');
+        WriteLn(gissatal,' var f√∂r litet.');
       If gissatal>slumptal then
-        WriteLn(gissatal,' var fîr stort.');
+        WriteLn(gissatal,' var f√∂r stort.');
     Until gissatal=slumptal;
-    WriteLn('RÑtt gissat, talet var ',slumptal);
-    WriteLn('Vill du gîra om det tryck "J"');
+    WriteLn('R√§tt gissat, talet var ',slumptal);
+    WriteLn('Vill du g√∂ra om det tryck "J"');
     Read(Kbd,tkn);
 
   Until not((tkn='j')or(tkn='J'));
 
 End.
-

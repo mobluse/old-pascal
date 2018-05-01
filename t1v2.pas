@@ -39,7 +39,7 @@ begin
   draw(xp(0),yp(0),xp(60000.0),yp(0),1);
   draw(xp(0),yp(0),xp(0),yp(20),1);
   gotoxy(4,1);
-  write('Temperatur utvecklingen i den isolerade „nden');
+  write('Temperatur utvecklingen i den isolerade Ã¤nden');
   gotoxy(1,3);
   write('T=20');
   gotoxy(74,25);
@@ -99,4 +99,3 @@ begin
   until t>60000.0;
   gotoxy(1,24);
 end.
-

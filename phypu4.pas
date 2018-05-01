@@ -1,6 +1,6 @@
 PROGRAM osciliator(Input,Output);
 {$I init}
-CONST k=1.2 { fj„derkonstanten N/m};
+CONST k=1.2 { fjÃ¤derkonstanten N/m};
       m=1.0 { massa kg};
       offsett=50 { se fig 2 };
       offsetx=100 { se fig 2};
@@ -46,4 +46,3 @@ BEGIN
   UNTIL t>5*period;
 END.
 
-

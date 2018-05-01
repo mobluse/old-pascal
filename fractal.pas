@@ -46,4 +46,4 @@ begin
   movepen(round(100*42.8),round(150*50));
   cut(100,150,250,150);
   exitplot(plotter);
-end.
+end.

@@ -12,4 +12,3 @@ begin
   exitplot(plotter);
 end.
 
-

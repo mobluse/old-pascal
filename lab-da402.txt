@@ -1,10 +1,10 @@
 Datalogi 10 p VT 87
 ===================
-*-markerade ‰r godk‰nda och kan uppvisas
+*-markerade √§r godk√§nda och kan uppvisas
 
-*PU1 Utr‰kning och formatterad utskrift
+*PU1 Utr√§kning och formatterad utskrift
 *PU2 Tabellutskrift
-*PU3 V‰xlingsprogram
+*PU3 V√§xlingsprogram
 *PU4 Aritmetik med stora tal
 *PU5 Epidemisimulering
 *PU6 Filhantering

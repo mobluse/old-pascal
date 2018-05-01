@@ -1,23 +1,23 @@
 { *************************************
              P L O T    1.0
-     Plotterrutiner fîr Turbo Pascal
+     Plotterrutiner f√∂r Turbo Pascal
         Magnus Olsson 7/10 1987
    ************************************ }
 
 
 { ***  Plottkoordinaterna anges som heltal i intervallet
-       0..32767. (0,0) Ñr nedre vÑnstra hîrnet. Varje steg motsvarar
-       1/40 mm pÜ pappret.
+       0..32767. (0,0) √§r nedre v√§nstra h√∂rnet. Varje steg motsvarar
+       1/40 mm p√• pappret.
 
-  **** Plottkommandona skrivs till en extern fil. Efter avslutad kîrning
-       kan man vÑlja att fÜ kommandona skickade direkt till plottern
-       eller att behÜlla dem som en fil pÜ disketten.
+  **** Plottkommandona skrivs till en extern fil. Efter avslutad k√∂rning
+       kan man v√§lja att f√• kommandona skickade direkt till plottern
+       eller att beh√•lla dem som en fil p√• disketten.
        Anledningen att kommandona inte skickas till plottern samtidigt
-       som de ges Ñr att det skulle binda upp plottern under hela
+       som de ges √§r att det skulle binda upp plottern under hela
        exekveringstiden
 
-  **** Fîljande globala identifierare Ñr avsedda fîr internt bruk
-       och skall inte anvÑndas av anropande program:
+  **** F√∂ljande globala identifierare √§r avsedda f√∂r internt bruk
+       och skall inte anv√§ndas av anropande program:
 
        pl_string (typ)
        pl_x,pl_y,pl_file (variabler)
@@ -31,11 +31,11 @@
 type pl_string    = string [255];
      OutputOption = (plotter,disk);
 
-var pl_x,pl_y : integer;      { Aktuell x- resp. y-koordinat - Ñndra *ej* }
+var pl_x,pl_y : integer;      { Aktuell x- resp. y-koordinat - √§ndra *ej* }
     pl_file   : text;
 
 
-{ *** Interna procedurer (skall ej anropas utifrÜn) *** }
+{ *** Interna procedurer (skall ej anropas utifr√•n) *** }
 
 
 procedure pl_error (message : pl_string);
@@ -54,18 +54,18 @@ end;
 
 
 procedure pl_errcheck;
-{ Kontrollera om IO-fel har uppkommit och avbryt i sÜ fall }
+{ Kontrollera om IO-fel har uppkommit och avbryt i s√• fall }
 
 begin
     case IOResult of
           0 : ;
-          3 : pl_error ('Plottfilen Ñr ej îppen');
-        $20 : pl_error ('OtillÜtet filnamn fîr plottfil');
+          3 : pl_error ('Plottfilen √§r ej √∂ppen');
+        $20 : pl_error ('Otill√•tet filnamn f√∂r plottfil');
         $F0,
         $F1,
-        $F2 : pl_error ('Skrivfel pÜ plottfil, disken fîrmodligen full');
-        $F3 : pl_error ('Skrivfel pÜ plottfil, fîr mÜnga filer îppna');
-        else  pl_error ('Skrivfel pÜ plottfil');
+        $F2 : pl_error ('Skrivfel p√• plottfil, disken f√∂rmodligen full');
+        $F3 : pl_error ('Skrivfel p√• plottfil, f√∂r m√•nga filer √∂ppna');
+        else  pl_error ('Skrivfel p√• plottfil');
     end;
 end;
 
@@ -73,7 +73,7 @@ end;
 
 { ***********************************************************************
 
-          *** Dessa procedurer kan anvÑndas frÜn programmet **
+          *** Dessa procedurer kan anv√§ndas fr√•n programmet **
 
   *********************************************************************** }
 
@@ -95,15 +95,15 @@ end; { PenPositionY }
 
 
 
-{ **** GrundlÑggande kommandon **** }
+{ **** Grundl√§ggande kommandon **** }
 
 
 procedure SelectPen (pen : integer);
-{ VÑlj penna }
+{ V√§lj penna }
 
 begin
     if (pen<0) or (pen>8) then
-        pl_error ('Felaktigt pennummer (mÜste ligga mellan 0 och 8)');
+        pl_error ('Felaktigt pennummer (m√•ste ligga mellan 0 och 8)');
     writeln (pl_file,'SP ',pen);
     pl_errcheck;
 end;
@@ -123,7 +123,7 @@ end; { MovePen }
 
 
 procedure SetLineType (lineType : integer);
-{ VÑlj linjetyp (heldragen, streckad etc. lineType=0 ger heldragen,
+{ V√§lj linjetyp (heldragen, streckad etc. lineType=0 ger heldragen,
   1..6 olika typer av streckning. }
 
 begin
@@ -136,7 +136,7 @@ begin
                 writeln (pl_file,'LT ',lineType,',2');
                 pl_errcheck;
             end;
-       else pl_error ('OtillÜten linjetyp');
+       else pl_error ('Otill√•ten linjetyp');
     end;
 end; { SetLineType }
 
@@ -144,7 +144,7 @@ end; { SetLineType }
 
 
 procedure PlotLineTo (x,y : integer);
-{ Rita en linje frÜn aktuell position till angiven punkt }
+{ Rita en linje fr√•n aktuell position till angiven punkt }
 
 begin
     writeln (pl_file,'PD ',x,',',y);
@@ -156,7 +156,7 @@ end; { PlotLineTo }
 
 
 procedure PlotLine (fromX,fromY,toX,toY : integer);
-{ Rita en linje frÜn punkten (fromX,fromY) till (toX,toY) }
+{ Rita en linje fr√•n punkten (fromX,fromY) till (toX,toY) }
 
 begin
     if (fromX<>pl_x) or (fromY<>pl_y) then
@@ -179,8 +179,8 @@ end; { PlotCircle }
 
 
 procedure PlotRectangle (x1,y1,x2,y2 : integer);
-{ Rita en rektangel. (x1,y1) resp (x2,y2) Ñr koordinaterna fîr
-  nedre vÑnstra resp. îvre hîgra hîrnet }
+{ Rita en rektangel. (x1,y1) resp (x2,y2) √§r koordinaterna f√∂r
+  nedre v√§nstra resp. √∂vre h√∂gra h√∂rnet }
 
 begin
     if (x1<>pl_x) or (y1<>pl_y) then
@@ -191,12 +191,12 @@ end; { PlotRectangle }
 
 
 
-{ **** Procedurer fîr plottning av text **** }
+{ **** Procedurer f√∂r plottning av text **** }
 
 
 procedure SetTextDirection (direction : integer);
 { Ange den riktning som PlotText etc. kommer att skriva i.
-  direction Ñr vinkeln (i grader) mot positiva x-axeln, rÑknat moturs }
+  direction √§r vinkeln (i grader) mot positiva x-axeln, r√§knat moturs }
 
 var angle    : real;
 
@@ -211,7 +211,7 @@ end; { SetTextDirection }
 
 
 procedure SetCharacterSize (width,height : real);
-{ Ange storlek i cm fîr de tecken som skrivs av PlotText etc. }
+{ Ange storlek i cm f√∂r de tecken som skrivs av PlotText etc. }
 
 begin
     if (width<=0) or (height<=0) then
@@ -223,14 +223,14 @@ end;
 
 
 procedure SetCharacterSlant (angle : integer);
-{ Ange lutning (i grader) fîr utskrivna tecken. Negativ vinkel ger
-  lutning Üt vÑnster, positiv Üt hîger }
+{ Ange lutning (i grader) f√∂r utskrivna tecken. Negativ vinkel ger
+  lutning √•t v√§nster, positiv √•t h√∂ger }
 
 var a,t : real;
 
 begin
     if (angle<=-90) or (angle>=90) then
-        pl_error ('Felaktig teckenlutning (mÜste ligga mellan -90 och 90)');
+        pl_error ('Felaktig teckenlutning (m√•ste ligga mellan -90 och 90)');
     a:=angle*pi/180.0;
     t:=sin (a)/cos (a);
     writeln (pl_file,'SL ',t:0:2);
@@ -239,24 +239,24 @@ end;
 
 
 procedure PlotText (txt : pl_string);
-{ Skriv en strÑng }
+{ Skriv en str√§ng }
 
 var i : byte;
 
 begin
-    { ôversÑtt fîrst till 7-bits ASCII }
+    { √ñvers√§tt f√∂rst till 7-bits ASCII }
     for i:=1 to length (txt) do
         case txt [i] of
-            'Ü' : txt [i]:='}';
-            'Ñ' : txt [i]:='{';
-            'î' : txt [i]:='|';
-            'è' : txt [i]:=']';
-            'é' : txt [i]:='[';
-            'ô' : txt [i]:='\';
-            'Å' : txt [i]:='~';
-            'ö' : txt [i]:='^';
-            'Ç' : txt [i]:='`';
-            'ê' : txt [i]:='@';
+            '√•' : txt [i]:='}';
+            '√§' : txt [i]:='{';
+            '√∂' : txt [i]:='|';
+            '√Ö' : txt [i]:=']';
+            '√Ñ' : txt [i]:='[';
+            '√ñ' : txt [i]:='\';
+            '√º' : txt [i]:='~';
+            '√ú' : txt [i]:='^';
+            '√©' : txt [i]:='`';
+            '√â' : txt [i]:='@';
          end;
      writeln (pl_file,'LB ',txt,#3);
      pl_errcheck;
@@ -302,8 +302,8 @@ end; { PlotInteger }
 
 
 procedure InitPlot (fileName : pl_string);
-{ Initiera plottning: ôppna plottfil med angivet namn, sÑtt x- och
-  y-koordinaterna till "omîjliga" vÑrden och ge initieringskommando
+{ Initiera plottning: √ñppna plottfil med angivet namn, s√§tt x- och
+  y-koordinaterna till "om√∂jliga" v√§rden och ge initieringskommando
   till plottern. }
 
 var i : byte;
@@ -313,7 +313,7 @@ begin
         fileName [i]:=UpCase (fileName [i]);
     if (fileName='COM1') or (fileName='COM2') or (fileName='AUX')
     or (fileName='LST') or (fileName='KBD') or (fileName='CON') then
-        pl_error ('OtillÜtet namn pÜ plottfil');
+        pl_error ('Otill√•tet namn p√• plottfil');
     pl_x:=-maxint;
     pl_y:=-maxint;
     assign (pl_file,fileName);
@@ -328,9 +328,9 @@ end; { InitPlot }
 
 procedure ExitPlot (option : OutputOption);
 
-{ Avsluta plottning: SÑtt tillbaka pennan och flytta till nedre
-  vÑnstra hîrnet. Om option=plotter: kopiera plottfilen direkt till
-  plottern och radera den frÜn disken, annars bara stÑng den }
+{ Avsluta plottning: S√§tt tillbaka pennan och flytta till nedre
+  v√§nstra h√∂rnet. Om option=plotter: kopiera plottfilen direkt till
+  plottern och radera den fr√•n disken, annars bara st√§ng den }
 
 var com2 : text;
     str  : pl_string;
@@ -341,8 +341,8 @@ begin
     SelectPen (0);
     if option=plotter then begin
         writeln;
-        writeln ('SlÜ pÜ plottern och anslut den till datorn');
-        writeln ('Tryck dÑrefter pÜ mellanslag (CTRL-C avbryter)');
+        writeln ('Sl√• p√• plottern och anslut den till datorn');
+        writeln ('Tryck d√§refter p√• mellanslag (CTRL-C avbryter)');
         repeat
             ch:=readkey;
         until ch=' ';
@@ -364,4 +364,3 @@ begin
 end;
 
 {$I+}
-

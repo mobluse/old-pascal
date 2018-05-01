@@ -10,4 +10,3 @@ begin
     a:=a+0.2;
   end;
 end.
-

@@ -6,10 +6,10 @@ uses graph,crt;
   ***                                     ***
   ***        NUBBE version 7.1            ***
   ***                                     ***
-  ***     Ett program fîr lîsning av      ***
-  *** den radiella Schrîdingerekvationen. ***
+  ***     Ett program f√∂r l√∂sning av      ***
+  *** den radiella Schr√∂dingerekvationen. ***
   ***  (Enligt Silverberg: Kvantmekanik)  ***
-  ***  Datorlaboration pÜ Fysik 3 ht -89  ***
+  ***  Datorlaboration p√• Fysik 3 ht -89  ***
   ***                                     ***
   ***                                     ***
   ***       Magnus Olsson  890907         ***
@@ -24,10 +24,10 @@ uses graph,crt;
 CONST maxSteps = 1000;   { Maximalt antal steg }
       rmin     = 0.0;
       bottom   = 190;
-      maxTries = 7;      { Stîrsta antal fîrsîk som visas samtidigt }
+      maxTries = 7;      { St√∂rsta antal f√∂rs√∂k som visas samtidigt }
 
-      { Konstanten title Ñr den text som skrivs som rubrik pÜ plotten }
-      title    = 'VÑteatomen';
+      { Konstanten title √§r den text som skrivs som rubrik p√• plotten }
+      title    = 'V√§teatomen';
 
 
 TYPE WaveFunction = ARRAY [0..maxSteps] OF Real;
@@ -49,7 +49,7 @@ VAR L,L2,n,try : integer;
 
 
 FUNCTION V (r : Real) : Real;
-{ Detta Ñr den potentiella energin som funktion av avstÜndet frÜn origo }
+{ Detta √§r den potentiella energin som funktion av avst√•ndet fr√•n origo }
 
 BEGIN
     V:=-2.0/r;
@@ -57,8 +57,8 @@ END; { V }
 
 
 
-{ Fîljande fyra funktioner anvÑnds fîr att rÑkna om koordinater till
-  skÑrmens respektive plotterns koordinatsystem }
+{ F√∂ljande fyra funktioner anv√§nds f√∂r att r√§kna om koordinater till
+  sk√§rmens respektive plotterns koordinatsystem }
 
 FUNCTION RCoord (r : Real) : Integer;
 
@@ -94,18 +94,18 @@ END;
 
 
 PROCEDURE Input (VAR steps,L : Integer; VAR E,rmax,ls : Real);
-{ LÑs in vÑrden pÜ diverse parametrar }
+{ L√§s in v√§rden p√• diverse parametrar }
 
 BEGIN
     REPEAT
-        Write ('Ange rîrelsemÑngdsmomentets kvanttal (l >= 0): ');
+        Write ('Ange r√∂relsem√§ngdsmomentets kvanttal (l >= 0): ');
         ReadLn (L);
     UNTIL l>=0;
 
     Write ('Ange styrkan hos LS-kopplingen: ');
     ReadLn (ls);
 
-    Write ('Ange rmax (îvre grÑnsen fîr integrationsintervallet): ');
+    Write ('Ange rmax (√∂vre gr√§nsen f√∂r integrationsintervallet): ');
     ReadLn (rmax);
 
     REPEAT
@@ -123,10 +123,10 @@ END; { Input }
 
 FUNCTION Solve (VAR G : WaveFunction; n,L2 : Integer; E,dr : Real;
                 VAR Gmax,Gmin : Real) : Integer;
-{ Lîs SE med angivna parametrar och energivÑrde E.
-  Den berÑknade vÜgfunktionen lagras i G.
-  Max och min av vÜgfunktionen returneras i Gmax och Gmin, medan
-  returvÑrdet Ñr G(0), normerat sÜ Gmax-Gmin = 2000. }
+{ L√∂s SE med angivna parametrar och energiv√§rde E.
+  Den ber√§knade v√•gfunktionen lagras i G.
+  Max och min av v√•gfunktionen returneras i Gmax och Gmin, medan
+  returv√§rdet √§r G(0), normerat s√• Gmax-Gmin = 2000. }
 
 VAR i    : Integer;
     r,Gr : Real;
@@ -136,7 +136,7 @@ BEGIN
     Write (#174:27,' Tystnad - geniet arbetar ',#175,'':25);
     Gmax:=-1e10; Gmin:=1e10;
 
-    { BerÑkna startvÑrde fîr stort r }
+    { Ber√§kna startv√§rde f√∂r stort r }
     G [n]:=1;
     G [n-1]:=Exp (Sqrt (-E)*dr);
 
@@ -156,8 +156,8 @@ END;
 
 PROCEDURE PlotOnScreen (VAR G : WaveFunction; n,try : Integer; dr : Real;
                         VAR tries : TryVector; writeTries : Boolean);
-{ Denna procedur plottar vÜgfunktionen G pÜ skÑrmen och skriver ut resultaten
-  av de senaste fîrsîken om writeTries = TRUE }
+{ Denna procedur plottar v√•gfunktionen G p√• sk√§rmen och skriver ut resultaten
+  av de senaste f√∂rs√∂ken om writeTries = TRUE }
 
 VAR i,driver,mode  : Integer;
     ch : Char;
@@ -172,7 +172,7 @@ BEGIN
         line (RCoord (i * dr),GCoord (G [i]),
               RCoord ((i-1) * dr),GCoord (G [i-1]));
     IF writeTries THEN BEGIN
-        { Skriv ut resultat av tidigare fîrsîk }
+        { Skriv ut resultat av tidigare f√∂rs√∂k }
         outtextxy (440,8,'Energi');
         outtextxy (552,8,'G(0)');
         IF try < maxTries THEN
@@ -201,7 +201,7 @@ END; { PlotOnScreen }
 
 PROCEDURE PlotOnPlotter (VAR G : WaveFunction; n,try : Integer;
                          VAR tries : TryVector; ls : Real);
-{ Plotta vÜgfunktionen pÜ plottern }
+{ Plotta v√•gfunktionen p√• plottern }
 
 VAR rScale,
     y0,i   : Integer;
@@ -210,12 +210,12 @@ VAR rScale,
 
 BEGIN
     TextMode (BW80);
-    Write ('Skriv ditt namn (fîr mÑrkning av plotten): ');
+    Write ('Skriv ditt namn (f√∂r m√§rkning av plotten): ');
     ReadLn (name);
 
     InitPlot ('nubbe.dat');
 
-    { BerÑkna skalfaktor i r-led }
+    { Ber√§kna skalfaktor i r-led }
     rScale:=Round (12000.0/n);
 
     { Rita axlar }
@@ -255,7 +255,7 @@ BEGIN
     PlotInteger (n,1);
 
     MovePen (11000,7400);
-    PlotText ('EnerginivÜ(er):');
+    PlotText ('Energiniv√•(er):');
     E:=tries [try mod maxTries].E;
     MovePen (12500,7050);
     PlotText ('j = '); PlotInteger (2*L+1,1); PlotText ('/2: ');
@@ -268,7 +268,7 @@ BEGIN
     END;
 
     MovePen (11000,6300);
-    PlotText ('NollvÑrde = ');
+    PlotText ('Nollv√§rde = ');
     PlotInteger (tries [try mod maxTries].G0,1);
 
     ExitPlot (plotter);
@@ -277,12 +277,12 @@ END;
 
 
 PROCEDURE NewEnergy (VAR choice : Char; VAR energy : Real);
-{ Denna procedur frÜgar efter înskat nytt energivÑrde. Om
+{ Denna procedur fr√•gar efter √∂nskat nytt energiv√§rde. Om
   man svarar med ett negativt tal returneras detta i energy, och
-  choice sÑtts till 'E'.
+  choice s√§tts till 'E'.
 
-  Om man svarar med 'A', 'P' eller 'S' sÜ returneras denna bokstav
-  i choice. I annat fall frÜgar datorn om. }
+  Om man svarar med 'A', 'P' eller 'S' s√• returneras denna bokstav
+  i choice. I annat fall fr√•gar datorn om. }
 
 
 VAR str : String [80];
@@ -295,18 +295,18 @@ BEGIN
         Write ('Ny energi (< 0)? P = Plotter, S = Skrivare, A = Avsluta');
         Write (' ':22);
         GotoXY (57,25);
-        Read (str);           { LÑs in en teckenstrÑng }
-        Val (str,energy,pos); { Fîrsîk tolka denna som ett reellt tal }
+        Read (str);           { L√§s in en teckenstr√§ng }
+        Val (str,energy,pos); { F√∂rs√∂k tolka denna som ett reellt tal }
         IF pos=0 THEN BEGIN
-            { TeckenstrÑngen gick att tolka som ett tal }
+            { Teckenstr√§ngen gick att tolka som ett tal }
             choice:='E';
-            OK:=E<0;  { Det inmatade talet mÜste vara negativt }
+            OK:=E<0;  { Det inmatade talet m√•ste vara negativt }
         END
         ELSE IF Length (str)=0 THEN
-            { StrÑngen var tom }
+            { Str√§ngen var tom }
             OK:=False
         ELSE BEGIN
-            { Testa om strÑngen bîrjar pÜ 'P', 'S' eller 'A' }
+            { Testa om str√§ngen b√∂rjar p√• 'P', 'S' eller 'A' }
             choice:=UpCase (str [1]);
             OK:=choice in ['P','S','A'];
         END;
@@ -324,35 +324,35 @@ END; { NewEnergy }
 BEGIN
     ClrScr;
     TextColor (14);
-    WriteLn ('…ÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕª':52);
-    WriteLn ('∫                    ∫':52);
-    WriteLn ('∫      N U B B E     ∫':52);
-    WriteLn ('∫     version 7.1    ∫':52);
-    WriteLn ('∫                    ∫':52);
-    WriteLn ('∫ Numerisk BerÑkning ∫':52);
-    WriteLn ('∫ och Behandling av  ∫':52);
-    WriteLn ('∫     EgenvÑrden     ∫':52);
-    WriteLn ('∫                    ∫':52);
-    WriteLn ('∫  av Magnus Olsson  ∫':52);
-    WriteLn ('∫       ht -89       ∫':52);
-    WriteLn ('∫                    ∫':52);
-    WriteLn ('»ÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕº':52);
+    WriteLn ('‚ïî‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïó':52);
+    WriteLn ('‚ïë                    ‚ïë':52);
+    WriteLn ('‚ïë      N U B B E     ‚ïë':52);
+    WriteLn ('‚ïë     version 7.1    ‚ïë':52);
+    WriteLn ('‚ïë                    ‚ïë':52);
+    WriteLn ('‚ïë Numerisk Ber√§kning ‚ïë':52);
+    WriteLn ('‚ïë och Behandling av  ‚ïë':52);
+    WriteLn ('‚ïë     Egenv√§rden     ‚ïë':52);
+    WriteLn ('‚ïë                    ‚ïë':52);
+    WriteLn ('‚ïë  av Magnus Olsson  ‚ïë':52);
+    WriteLn ('‚ïë       ht -89       ‚ïë':52);
+    WriteLn ('‚ïë                    ‚ïë':52);
+    WriteLn ('‚ïö‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïù':52);
     WriteLn; WriteLn;
     TextColor (15);
 
-    Input (n,l,E,rmax,ls);  { LÑs in parametrar och startvÑrde fîr E }
+    Input (n,l,E,rmax,ls);  { L√§s in parametrar och startv√§rde f√∂r E }
     l2:=l*(l+1);
     try:=0;
 
     REPEAT
-       { Lîs radiella SE med aktuella parametrar, och lagra resultatet och E }
+       { L√∂s radiella SE med aktuella parametrar, och lagra resultatet och E }
        tries [try mod maxTries].E:=E;
        tries [try mod maxTries].G0:=Solve (G,n,L2,E,rmax/n,Gmax,Gmin);
 
        { Plotta kurvan }
        PlotOnScreen (G,n,try,rmax/n,tries,TRUE);
 
-       { LÑs in ny energi, eller ett kommando }
+       { L√§s in ny energi, eller ett kommando }
        NewEnergy (choice,E);
 
        IF choice='S' THEN BEGIN
@@ -362,14 +362,14 @@ BEGIN
            GotoXY (50,1); Write ('L = ',L);
            GotoXY (50,2); Write ('LS = ',ls:1:5);
            GotoXY (50,3); Write ('rmax = ',rmax:1:0);
-           GotoXY (50,5); Write ('EnerginivÜ(er):');
+           GotoXY (50,5); Write ('Energiniv√•(er):');
            GotoXY (52,6); Write ('j = ',2*L+1,'/2: ',E-L*ls:1:6);
            IF L>0 THEN BEGIN
                GotoXY (52,7); Write ('j = ',2*L-1,'/2: ',E+(L+1)*ls:1:6);
            END;
            GotoXY (1,25);
-           Write ('Tryck pÜ PrtScr fîr skÑrmdump ',
-                  'och pÜ return fîr att avsluta!');
+           Write ('Tryck p√• PrtScr f√∂r sk√§rmdump ',
+                  'och p√• return f√∂r att avsluta!');
            ReadLn;
        END
        ELSE IF choice='P' THEN
@@ -379,7 +379,6 @@ BEGIN
 
     UNTIL choice<>'E';
 
-    { èterstÑll skÑrmen till textmod }
+    { √Öterst√§ll sk√§rmen till textmod }
     TextMode (BW80);
 END.
-

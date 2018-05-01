@@ -80,4 +80,3 @@ begin
     skrivut(u,t);
   until t>1000;
 end.
-

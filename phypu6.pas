@@ -2,10 +2,10 @@ PROGRAM frittfall(Input,Output);
 {$I init}
 CONST g=9.81 { gravitationskonstanten N/s2};
       dt=0.001 {tidssteg};
-      v0=0.0 {utg냣gshastigheten};
-      l=1.0  {pendelns l꼗gd};
+      v0=0.0 {utg책ngshastigheten};
+      l=1.0  {pendelns l채ngd};
       pi=3.141592; {pi}
-      tmax=2.5 {tid som ber꼔nas};
+      tmax=2.5 {tid som ber채knas};
       itstep=150 {antalet iterationer mellan utskrifterna};
 
 VAR t,fi,vx,period,fig:Real;
@@ -45,7 +45,7 @@ END;
 BEGIN
   ClrScr;
   WriteLn('Periodtiden som funktion av utslagsvinkeln');
-  WriteLn('Tiden enligt formeln fr냣 den matematiska pendeln:',2*pi*sqrt(l/g):6:4);
+  WriteLn('Tiden enligt formeln fr책n den matematiska pendeln:',2*pi*sqrt(l/g):6:4);
   fig:=10;
   REPEAT
     fi:=fig*pi/180;
@@ -55,9 +55,8 @@ BEGIN
     UNTIL fi<0;
     t:=t-fi*l/vx;
     period:=4*t;
-    WriteLn('F봱 utslagsvinkeln ',fig:5:1,' 꼛 perioden ',period:8:4);
+    WriteLn('F철r utslagsvinkeln ',fig:5:1,' 채r perioden ',period:8:4);
     fig:=fig+10;
   UNTIL fig=180
 END.
 
-

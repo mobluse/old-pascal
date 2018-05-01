@@ -1,11 +1,11 @@
-{ ***  INIT.PAS - initieringssekvens fîr elevprogram ***
+{ ***  INIT.PAS - initieringssekvens f√∂r elevprogram ***
        Magnus Olsson 8/10 1987
 
-  ***  Denna fil skall inkluderas fîrst i programmet men efter
+  ***  Denna fil skall inkluderas f√∂rst i programmet men efter
        eventuell prgramrubrik
 
-  NedanstÜende direktiv kopplar input rill stdio fîr kompatibilitet
-  med standardpascal, samt slÜr pÜ testning fîr CTRL-C och felaktiga
-  indexgrÑnser under exekvering }
+  Nedanst√•ende direktiv kopplar input rill stdio f√∂r kompatibilitet
+  med standardpascal, samt sl√•r p√• testning f√∂r CTRL-C och felaktiga
+  indexgr√§nser under exekvering }
 
-{$G256,U+,R+}
+{$G256,U+,R+}

@@ -103,4 +103,4 @@ begin
               putpixel(i*(maxx div (2*channels)),maxy-round(shrink*(G[i]-mincnt)),1);
          end;
      close(corrdata);
-end.
+end.

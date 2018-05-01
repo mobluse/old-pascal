@@ -28,4 +28,3 @@ Begin
   Until fi>3.1415;
   exitplot(plotter);
 End.
-

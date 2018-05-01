@@ -78,43 +78,42 @@ Begin
 End;  {skriv_ut_mat}
 
 {**************************************************************************
-               HÑr bîrjar huvudprogrammet
+               H√§r b√∂rjar huvudprogrammet
 **************************************************************************}
 
 
 Begin
   Repeat
     ClrScr;
-    Write('Hur mÜnga rader/kolonner skall behandlas :');
+    Write('Hur m√•nga rader/kolonner skall behandlas :');
     ReadLn(nelm);
 
     nolla_mat(ma,nelm);
     nolla_mat(mb,nelm);
 
-    WriteLn('InlÑsning av den fîrsta matrisen.');
+    WriteLn('Inl√§sning av den f√∂rsta matrisen.');
     las_in_mat(ma,nelm);
 
-    WriteLn('InlÑsning av den andra matrisen.');
+    WriteLn('Inl√§sning av den andra matrisen.');
     las_in_mat(mb,nelm);
 
     matmult(mc,ma,mb,nelm);
 
     ClrScr;
 
-    WriteLn('Den fîrsta matrisen:');
+    WriteLn('Den f√∂rsta matrisen:');
     skriv_ut_mat(ma,nelm);
 
     WriteLn('Den andra matrisen:');
     skriv_ut_mat(mb,nelm);
 
-    Writeln('Resultatet av multiplikation med de tvÜ inmatade matriserna ovan.');
+    Writeln('Resultatet av multiplikation med de tv√• inmatade matriserna ovan.');
     skriv_ut_mat(mc,nelm);
 
-    WriteLn('Vill du gîra det en gÜng till tryck "J"');
+    WriteLn('Vill du g√∂ra det en g√•ng till tryck "J"');
     Read(Kbd,tkn);
   Until Not((tkn='J')or(tkn='j'));
 End.
-     {slut pÜ huvudprogrammet}
+     {slut p√• huvudprogrammet}
 
 
-

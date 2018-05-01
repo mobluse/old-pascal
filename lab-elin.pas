@@ -116,7 +116,7 @@ PROCEDURE initiate;
                Write('                                                            ');
                Write('                  ');
                GotoXY(1,1);
-               Write('Giv Y-koordinaten fîr x=0  ');
+               Write('Giv Y-koordinaten f√∂r x=0  ');
                Read(y);
                yo:=y;
                IF rq<0 THEN GotoXY(1,1) ELSE Writeln;
@@ -124,10 +124,10 @@ PROCEDURE initiate;
                Write('Giv den infallande elektronens enengi i eV  ');
                Read(uo);
                IF rq<0 THEN GotoXY(1,1) ELSE  Writeln;
-               Write('      Giv elektronkÑllans avstÜnd frÜn y-axeln  ');
+               Write('      Giv elektronk√§llans avst√•nd fr√•n y-axeln  ');
                Read(xbi);
                IF rq<0 THEN GotoXY(1,1) ELSE  Writeln;
-               Write('       Utskrift av data pÜ plotter?   J/N          ');
+               Write('       Utskrift av data p√• plotter?   J/N          ');
                Read(sluv);  Writeln;
                IF sluv='j' THEN sluv:='J';
                IF rq>0 THEN HiRes;
@@ -258,21 +258,21 @@ PROCEDURE banplot;
                               yslut:=-(xbild-nx+1)*vy/vx;
                               IF Abs(xbild)>1e4 THEN gl:=-1;
                               GotoXY(1,1);
-                              Write('x fîr bildpunkt b=',xbild:3:2);
-                              Write('     y fîr x=N1-1   y2=',yslut:1:2);
+                              Write('x f√∂r bildpunkt b=',xbild:3:2);
+                              Write('     y f√∂r x=N1-1   y2=',yslut:1:2);
                               IF fl<0 THEN
                               BEGIN GotoXY(1,25);
                                     hb:=xbild+yo*vx/vy;
-                                    Write('x fîr bildhpl  hb=',hb:5:2);
+                                    Write('x f√∂r bildhpl  hb=',hb:5:2);
                                     fb:=xbild-hb;
-                                    Write('      brÑnnvidden  fb=',fb:5:2);
+                                    Write('      br√§nnvidden  fb=',fb:5:2);
                               END;
                               IF gl<0 THEN
                               BEGIN GotoXY(1,25);
                                     hk:=yny/yo*xbi-xbi;
-                                    Write('x fîr objekthpl  ho=',hk:5:2);
+                                    Write('x f√∂r objekthpl  ho=',hk:5:2);
                                     fo:=xbi+hk;
-                                    Write('     brÑnnvidden fo=',fo:5:2);
+                                    Write('     br√§nnvidden fo=',fo:5:2);
 
                               END;
                          END
@@ -284,7 +284,7 @@ PROCEDURE banplot;
                                GotoXY(1,1);
                          END;
                          GoToXY(57,1);
-                         Write('Fler berÑkningar? J/N');
+                         Write('Fler ber√§kningar? J/N');
                          Read(qw);
                          GoToXY(1,25);
                          Write('                                  ');
@@ -394,7 +394,7 @@ PROCEDURE ekviplot;
                   UNTIL vp<=sl;
                   GotoXY(1,1);
                   IF rpl='J' THEN Write(plt,'SP 0;');
-                  Write('Fîr fortsatt berÑkning slÜ godtycklig tangent');
+                  Write('F√∂r fortsatt ber√§kning sl√• godtycklig tangent');
                   Read(fortsatt);
           END;
 
@@ -411,7 +411,7 @@ BEGIN
       Read(eslask,v[i,j]);
       END;
       close(eslask);
-      Writeln('ér Rolandplottern inkopplad?  J/N');
+      Writeln('√Ñr Rolandplottern inkopplad?  J/N');
       Read(rpl);  Writeln;
       IF rpl='j' THEN rpl:='J';
       IF rpl='J' THEN
@@ -439,4 +439,3 @@ BEGIN
       Close(plt);
 
 END.
-

@@ -100,4 +100,3 @@ begin
   until t>60000.0;
   gotoxy(1,24);
 end.
-

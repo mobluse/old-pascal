@@ -1,9 +1,9 @@
 PROGRAM osciliator(Input,Output);
 {$I init}
 CONST g=9.81 { gravitationskonstanten N/s2};
-      v0=0.0 { utg냣gshastighet kg};
+      v0=0.0 { utg책ngshastighet kg};
       dt=0.01 {tidssteg};
-      tmax=20 {tiden som skall ber꼔nas};
+      tmax=20 {tiden som skall ber채knas};
       itstep=100 {antalet iterationer mellan utskrifterna};
 
 VAR t,x,vx:Real;
@@ -13,7 +13,7 @@ PROCEDURE initiate(VAR t,vx,x:Real);
 BEGIN
   t:=0;         vx:=0;         x:=0;
   ClrScr;
-  WriteLn('Tid       l꼏e(ber)  hast(ber)  l꼏e(ex)   hast(ex)');
+  WriteLn('Tid       l채ge(ber)  hast(ber)  l채ge(ex)   hast(ex)');
   WriteLn;
   WriteLn('     0.00      0.00      0.00      0.00      0.00');
 END;
@@ -59,4 +59,3 @@ BEGIN
   UNTIL t>=tmax;
 END.
 
-

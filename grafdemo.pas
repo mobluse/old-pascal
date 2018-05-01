@@ -1,7 +1,7 @@
 {.72}
 PROGRAM GrafDemo;
 
-(* AnsprÜkslîst demo av grafiken i TURBO PASCAL ver 3.0  *)
+(* Anspr√•ksl√∂st demo av grafiken i TURBO PASCAL ver 3.0  *)
 (* (c) 1985 DATABITEN                                    *)
 
 (*$I GRAPH.P *)
@@ -15,7 +15,7 @@ BEGIN
    GraphColorMode;
    Palette(0);
 
-   TurtleWindow(160,100,200,150);              (* Aktuellt fînster *)
+   TurtleWindow(160,100,200,150);              (* Aktuellt f√∂nster *)
    FillScreen(1);
    GotoXY(1,24); Write('Tryck valfri tangent');
 
@@ -25,7 +25,7 @@ BEGIN
       Forwd(Random(30));
    UNTIL KeyPressed;
 
-   HideTurtle;                                 (* Invertera fînstret *)
+   HideTurtle;                                 (* Invertera f√∂nstret *)
    ColorTable(3,2,1,0);
    FillScreen(-1);
    Read(kbd,ch);
@@ -37,25 +37,25 @@ BEGIN
    SetHeading(220);                            (* Rita mun *)
    Arc(115,80,90,17,2);
 
-   Circle(112,50,2,2);                         (* Rita hîger îga *)
+   Circle(112,50,2,2);                         (* Rita h√∂ger √∂ga *)
    FillShape(112,50,2,2);
-   Circle(88,50,2,2);                          (* Rita vÑnster îga *)
+   Circle(88,50,2,2);                          (* Rita v√§nster √∂ga *)
    FillShape(88,50,2,2);
 
-   Draw(100,50,105,70,2);                      (* Rita nÑsa *)
+   Draw(100,50,105,70,2);                      (* Rita n√§sa *)
    Draw(105,70,100,70,2);
 
 
    GetPic(ansikte,65,25,135,95);               (* Spara ansikte *)
    Read(kbd,ch);
 
-   REPEAT                                      (* Variera fÑrg pÜ ansikte *)
+   REPEAT                                      (* Variera f√§rg p√• ansikte *)
       ColorTable(Random(4),Random(4),Random(4),Random(4));
       PutPic(ansikte,60,95);
    UNTIL KeyPressed;
    Read(kbd,ch);
 
-   Delay(500);                                  (* Ansiktet rîr sig *)
+   Delay(500);                                  (* Ansiktet r√∂r sig *)
    x:= 60; y:= 95;
    REPEAT
      PutPic(ansikte,x,y);
@@ -65,4 +65,3 @@ BEGIN
 
    TextMode;
 END (* GrafDemo *).
-

@@ -1,9 +1,9 @@
 PROGRAM frittfall(Input,Output);
 {$I init}
 CONST g=9.81 { gravitationskonstanten N/s2};
-      v0=0.0 { utg냣gshastighet kg};
+      v0=0.0 { utg책ngshastighet kg};
       dt=0.01 {tidssteg};
-      tmax=19.0 {tiden som skall ber꼔nas};
+      tmax=19.0 {tiden som skall ber채knas};
       itstep=100 {antalet iterationer mellan utskrifterna};
 
 VAR t,x,vx:Real;
@@ -14,7 +14,7 @@ BEGIN
   t:=0;         vx:=0;         x:=0;
   ClrScr;
   WriteLn('       Frittfall med MedelPunktsAproximatio (MPA)!');
-  WriteLn('     Tid  l꼏e(ber)  hast(ber)   l꼏e(ex)   hast(ex)');
+  WriteLn('     Tid  l채ge(ber)  hast(ber)   l채ge(ex)   hast(ex)');
   WriteLn;
   WriteLn('    0.00       0.00       0.00       0.00       0.00');
 END;
@@ -60,4 +60,3 @@ BEGIN
   UNTIL t>=(tmax-0.0001);
 END.
 
-

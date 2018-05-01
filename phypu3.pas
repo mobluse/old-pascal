@@ -175,21 +175,21 @@ Procedure options;
 
 Begin
   ClrScr;
-  WriteLn('VÑrden inom [] Ñr default');
+  WriteLn('V√§rden inom [] √§r default');
   WriteLn;
   Write('Indelningar vid plottning [',indelningar,']:');
   ReadLn(indelningar);
   WriteLn;
   WriteLn('Koordinater vid plottning');
-  Write('Nedre vÑnstra hîrnet [',xmin:8:2,' ',ymin:8:2,']:');
+  Write('Nedre v√§nstra h√∂rnet [',xmin:8:2,' ',ymin:8:2,']:');
   ReadLn(xmin,ymin);
-  Write('ôvre hîgra hîrnet [',xmax:8:2,' ',ymax:8:2,']:');
+  Write('√ñvre h√∂gra h√∂rnet [',xmax:8:2,' ',ymax:8:2,']:');
   ReadLn(xmax,ymax);
   WriteLn;
-  WriteLn('Koordinater pÜ plottern');
-  Write('Nedre vÑnstra hîrnet [',pxmin:8,' ',pymin:8,']:');
+  WriteLn('Koordinater p√• plottern');
+  Write('Nedre v√§nstra h√∂rnet [',pxmin:8,' ',pymin:8,']:');
   ReadLn(pxmin,pymin);
-  Write('ôvre hîgra hîrnet [',pxmax:8,' ',pymax:8,']:');
+  Write('√ñvre h√∂gra h√∂rnet [',pxmax:8,' ',pymax:8,']:');
   ReadLn(pxmax,pymax);
   ClrScr;
 End;
@@ -425,7 +425,7 @@ Begin
   Until Abs(polv(pol,mx,grad))<1e-6;
 
   GoToXY(1,1);
-  Write('NollstÑlle fîr X=',mx:8:3);
+  Write('Nollst√§lle f√∂r X=',mx:8:3);
   Repeat Until KeyPressed;
   HiRes;
 End;
@@ -478,4 +478,3 @@ Begin
    TextMode;
 
 End.
-

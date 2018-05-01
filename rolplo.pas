@@ -176,4 +176,3 @@ begin
   close(datafil);
   exitplot(plotter);
 end.
-

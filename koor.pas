@@ -9,4 +9,3 @@ Begin
   plotline(7500,0,7500,10000);
   exitplot(plotter);
 end.
-

@@ -45,4 +45,3 @@ FUNCTION  TurtleThere: BOOLEAN;                       EXTERNAL Graphics[108];
 PROCEDURE Wrap;                                       EXTERNAL Graphics[111];
 FUNCTION  Xcor: INTEGER;                              EXTERNAL Graphics[114];
 FUNCTION  Ycor: INTEGER;                              EXTERNAL Graphics[117];
-

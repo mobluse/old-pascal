@@ -2,19 +2,19 @@ PROGRAM vanAllen;
 	USES Crt, Graph;
   	{Lars Gislen, 25 augusti, 1992}
   CONST
-  	k = 1;				{Magnetf꼕tets styrka}
-    dt0 = 0.01;		{Prelimin꼛t tidssteg}
+  	k = 1;				{Magnetf채ltets styrka}
+    dt0 = 0.01;		{Prelimin채rt tidssteg}
   VAR
-  	x, y, z : Real;		{L꼏eskoordinater}
+  	x, y, z : Real;		{L채geskoordinater}
     vx,vy,vz : Real;	{Hastighet}
-    i : Integer;	{R꼔nare}
+    i : Integer;	{R채knare}
     a2 : Real;		{Accelerationens ^2}
 
   PROCEDURE Initialize;
   	VAR
     	gd, gm, errCode : Integer;
     BEGIN
-    	x := 1;		y := 0;		z := 0;		{Startl꼏e}
+    	x := 1;		y := 0;		z := 0;		{Startl채ge}
       i := 0;
       a2 := 0.1;
       vx := 0.0;	vy := 0.1;	vz := 0.1;	{Starthastighet}
@@ -30,10 +30,10 @@ PROGRAM vanAllen;
 
   PROCEDURE Step;
   	VAR
-    	vxp, vyp, vzp : Real;		{Prelimin꼛 hastighet}
+    	vxp, vyp, vzp : Real;		{Prelimin채r hastighet}
       dt : Real;							{Variabelt tidssteg}
       ax0, ay0, az0, ax1, ay1, az1 : Real;	{Accelerationer}
-      r2, r5 : Real;					{Hj꼕pvariabler}
+      r2, r5 : Real;					{Hj채lpvariabler}
     BEGIN
     	i := i+1;
       dt := dt0/a2;
@@ -42,10 +42,10 @@ PROGRAM vanAllen;
       ax0 := k*(vy*(3*z*z-r2)-3*vz*y*z)/r5;
       ay0 := k*(3*vz*x*z-vx*(3*z*z-r2))/r5;
       az0 := k*z*3*(vx*y-vy*x)/r5;
-      x := x + vx*dt + 0.5*ax0*Sqr(dt);	{Uppdatera l꼏e}
+      x := x + vx*dt + 0.5*ax0*Sqr(dt);	{Uppdatera l채ge}
       y := y + vy*dt + 0.5*ay0*Sqr(dt);
       z := z + vz*dt + 0.5*az0*Sqr(dt);
-      vxp := vx + ax0*dt;	{Prelimin꼛 hastighet}
+      vxp := vx + ax0*dt;	{Prelimin채r hastighet}
       vyp := vy + ay0*dt;
       vzp := vz + az0*dt;
       ax1 := k*(vyp*(3*z*z-r2)-3*vzp*y*z)/r5; {Ny acceleration}
@@ -66,7 +66,7 @@ PROGRAM vanAllen;
           PutPixel(150+Round((x+z)*100), 250-Round(y*100), 15);
           PutPixel(470+Round((x+z)*100+8*(x-y)), 250-Round(y*100), 15);
           i := 0;
-          IF Random(100)=1 THEN       {럑dra hastighet}
+          IF Random(100)=1 THEN       {횆ndra hastighet}
             BEGIN
               vx := vx + 0.0005*(Random-0.5);
               vy := vy + 0.0005*(Random-0.5);

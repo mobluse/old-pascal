@@ -36,7 +36,7 @@ FUNCTION FNZ(S :Real):Real;
 
 FUNCTION Imp(R:Real):Real;
  CONST a0 = 4.9553;           (* Ger protonens begynnels-impuls *)
-       a1 = 0.28559;          (* om stopp-strÑckan Ñr given     *)
+       a1 = 0.28559;          (* om stopp-str√§ckan √§r given     *)
        a2 = -0.0036692;       (* diagram sid. 2 i komp.         *)
        a3 = -0.00045705;
        a4 = 0.00017606;
@@ -51,8 +51,8 @@ FUNCTION Imp(R:Real):Real;
 
 
 FUNCTION Range(P:Real):Real;
- CONST a0 = -8.3848;          (* Ger protonens stopp-strÑcka     *)
-       a1 = -2.1907;          (* om begynnelse-impulsen Ñr given *)
+ CONST a0 = -8.3848;          (* Ger protonens stopp-str√§cka     *)
+       a1 = -2.1907;          (* om begynnelse-impulsen √§r given *)
        a2 = 1.1504;           (* diagram sid. 2 i komp.          *)
        a3 = -0.071070;
        a4 = -0.00057844;
@@ -70,9 +70,9 @@ FUNCTION Range(P:Real):Real;
 PROCEDURE Inread;
  VAR ch:Char;
  BEGIN
-  Write('SKAL FAKTORER: îvre och nedre ? ');
+  Write('SKAL FAKTORER: √∂vre och nedre ? ');
   ReadLn(F8,F7);
-  Write('AVSTèNDET S0 ? ');
+  Write('AVST√ÖNDET S0 ? ');
   ReadLn(S0);
   Write('Bild nr. ? ');
   ReadLn(Bild);
@@ -82,10 +82,10 @@ PROCEDURE Inread;
   IF ((ch = 'J') OR (ch = 'j')) THEN
    Stop:=TRUE;
 
-    (*   INPUT VY 2: PROJ ôPPNINGSVINKEL, PROJ LéNGD LAMBDA,   *)
-    (*   PROJ LéNGD PROTON, PROJ LéNGD PI, PI'S KRôKNINGS-     *)
-    (*   RADIE (OM PI EJ STANNAR), PROJ LéNGD ôVER VILKEN      *)
-    (*   RADIEN BESTéMTS (OM PI EJ STANNAR)                    *)
+    (*   INPUT VY 2: PROJ √ñPPNINGSVINKEL, PROJ L√ÑNGD LAMBDA,   *)
+    (*   PROJ L√ÑNGD PROTON, PROJ L√ÑNGD PI, PI'S KR√ñKNINGS-     *)
+    (*   RADIE (OM PI EJ STANNAR), PROJ L√ÑNGD √ñVER VILKEN      *)
+    (*   RADIEN BEST√ÑMTS (OM PI EJ STANNAR)                    *)
 
   IF Stop THEN
    BEGIN
@@ -98,7 +98,7 @@ PROCEDURE Inread;
     ReadLn(V,R1,R2,R3,R4,R5);
    END;
 
-    (*   INPUT S-VéRDEN: LAMBDA PROD, LAMBDA SôNDERFALL,   *)
+    (*   INPUT S-V√ÑRDEN: LAMBDA PROD, LAMBDA S√ñNDERFALL,   *)
     (*   PROTON STOPPUNKT, PIMESON PUNKT                   *)
 
   Write('VY 1&3  S1,S2,S3,S4 ? ');
@@ -115,7 +115,7 @@ VAR com,F1,F2,F3 :Real;
   S3:=FNZ(S3);
   S4:=FNZ(S4);
 
-       (* BERéKNING AV ELEVATIONSVINKLAR FORMEL 9 *)
+       (* BER√ÑKNING AV ELEVATIONSVINKLAR FORMEL 9 *)
   F1:=FNF(0.5*(S2+S3));
   V1:=ArcTan((S3-S2)/(F1*R2));
   F2:=FNF(0.5*(S2+S4));
@@ -123,11 +123,11 @@ VAR com,F1,F2,F3 :Real;
   F3:=FNF(0.5*(S1+S2));
   V4:=ArcTan((S2-S1)/(F3*R1));
 
-       (* PROTONENS RéCKVIDD OCH RôRELSEMéNGD *)
+       (* PROTONENS R√ÑCKVIDD OCH R√ñRELSEM√ÑNGD *)
   R2:=R2*F1/Cos(V1);
   P1:=Imp(R2);
 
-       (* PIMESONENS RôRELSEMéNGD       *)
+       (* PIMESONENS R√ñRELSEM√ÑNGD       *)
        (* notera mass-skalnings formeln *)
   R3:=R3*F2/Cos(V2);
   IF Stop THEN
@@ -162,7 +162,7 @@ PROCEDURE Outwrite;
   WriteLn;
   WriteLn;
   WriteLn('Bild nr. ',Bild);
-  WriteLn('VERKLIGA LéNGDER (CM) ');
+  WriteLn('VERKLIGA L√ÑNGDER (CM) ');
   WriteLn('    PROTON : ',R2:8:2);
   WriteLn('    PI     : ',R3:8:2);
   WriteLn('    LAMBDA : ',R:8:2);
@@ -171,9 +171,9 @@ PROCEDURE Outwrite;
   WriteLn('    PROTON : ',180*V1/pi:8:0);
   WriteLn('    PI     : ',180*V2/pi:8:0);
   WriteLn('    LAMBDA : ',180*V3/pi:8:0,180*V4/pi:8:0);
-  WriteLn('(frÜn impuls bevaring och data resp.) ');
+  WriteLn('(fr√•n impuls bevaring och data resp.) ');
   WriteLn;
-  WriteLn('RôRELSEMéNGDER (MEV/C) ');
+  WriteLn('R√ñRELSEM√ÑNGDER (MEV/C) ');
   WriteLn('    PROTON : ',P1:8:0);
   WriteLn('    PI     : ',P2:8:0);
   WriteLn('    LAMBDA : ',P:8:0);
@@ -193,6 +193,5 @@ BEGIN     (* ---MAIN-PROGRAM--- *)
   IF OK THEN
    Outwrite
   ELSE
-   WriteLn('Utanfîr diagrammet pÜ sid 2 i komp.');
+   WriteLn('Utanf√∂r diagrammet p√• sid 2 i komp.');
  END.
-

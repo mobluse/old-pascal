@@ -100,4 +100,3 @@ begin
   until t>1610000.0;
   textmode;
 end.
-
