@@ -1,14 +1,14 @@
-Subject: Toccata en mandelbrotmängdplottare ==>
+Subject: Toccata en Mandelbrotmängdplottare ==>
 Hej Bengt! Idag är jag lätt förkyld, men jag skickar ändå
-över ett pascalprogram som ritar upp mandelbrotmängden på
+över ett Pascalprogram som ritar upp mandelbrotmängden på
 det komplexa talplanet. Jag hoppas du blir inspirerad att
-göra en del förändringar i det. Tex lägga till färg eller
+göra en del förändringar i det. T.ex. lägga till färg eller
 zoomfunktion.
 
-Med vänlig hälsning /mikaelÉastro.astol.lu.se
+Med vänlig hälsning /mikael@astro.astol.lu.se
 
 +----------------------------------------------+
-ö  "Astrofysiker är astronomer med glasögon."  ö 
+|  "Astrofysiker är astronomer med glasögon."  |
 +----------------------------------------------+
 
 section 1 of uuencode 2.13 of file toccata.zip    by R.E.M.
