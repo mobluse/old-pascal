@@ -9,7 +9,7 @@ I removed ^Z (end of file character) and changed CRLF to LF using
 `sed -i -e 's/^Z//' -e 's/^M$//' filename.pas`, where ^Z is entered by typing Ctrl+V Ctrl+Z in Bash, and ^M, Ctrl+V Ctrl+M.
 
 An alternative is to use `dos2unix`:  
-`iconv -f CP437 -t UTF8 filename.pas | sed 's/^Z//' | dos2unix`
+`iconv -f CP437 -t UTF8 filename.pas | tr -d '\32' | dos2unix > filename.pas2`
 
 Now you can compile to `bubsigma`, `crcrcrlf`, `field`, `polsk`, `polsk2`, and `spridn` using `fpc`
 (Free Pascal Compiler version 2.6.4 for Raspbian on Raspberry Pi). `pu7` uses different file procedures. 
