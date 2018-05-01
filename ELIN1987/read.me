@@ -1,0 +1,221 @@
+
+     VŽLKOMMEN till TURBO PASCAL+ version 3.0!
+     -----------------------------------------
+
+
+
+     ™VERSIKT ™VER ŽNDRINGAR OCH TILLŽGG I TURBO PASCAL 3.0
+     -------------------------------------------------------
+
+     Program som har skrivits med TURBO 2.0 kan uppf”ra sig annorlunda
+     n„r TURBO 3.0 anv„nds.
+
+    - TURBO g”r inte l„ngre ClrScr n„r programmet b”rjar.
+    - TURBO g”r inte l„ngre GotoXY(1,25) n„r programmet avslutas.
+    - PC/MS-DOS: Anv„ndningen av filhanterare (file handles) g”r att alla
+      filer m†ste st„ngas med Close - „ven om de inte har modifierats.
+      L„gg ocks† till exv. "files = 20" i filen CONFIG.SYS (se MS-DOS
+      manualen). OBS! DOS anv„nder alltid 5 filhanterare (standard input,
+      output, error, auxiallary, printer).
+
+    - Hanteringen av vissa logiska enheter har f”r„ndrats i ”verensst„mmelse
+      med standardpascal och hantering av diskfiler.
+
+        1.  Enheten TRM: „r buffrad vid Read och inmatning avslutas med <RET>.
+        2.  Enheten KBD: „r inte buffrad. Funktionerna Eof, Eoln och proce-
+            duren ReadLn v„ntar d„rf”r p† att en tangent ska tryckas ned.
+
+
+     TINST installation
+     ------------------
+
+     MS-DOS: TINST till†ter numera att filen TURBO.MSG (felmeddelanden)
+     installeras med en v„g (path).
+
+     PC-DOS: Vid sk„rminstallationen „r den sista fr†gan:
+
+           Blinkar sk„rmen n„r texten rullar? (J/N):
+
+     Om sk„rmen „r "sn”ig" i TURBO editorn, svara "J".
+
+
+     Chain och Execute
+     -----------------
+     Heapen bevaras vid Chain (MS/PC-DOS & CP/M-86).
+
+     Chain och Execute s„tter inte l„ngre en flagga i kommandoradsparametern.
+
+
+     INLINE
+     ------
+     En konstantidentifierare i INLINE-satsen genererar inte alltid
+     2 bytes.
+
+
+     Filer
+     -----
+     Append proceduren (MS/PC-DOS).
+     DOS path-namn underst”ds (MS/PC-DOS).
+     Omdirigering av i/o (MS/PC-DOS)
+     Eventuell parameter f”r att deklarera buffertstorlek f”r textfiler
+     (MS/PC-DOS & CP/M-86).
+     Eventuell parameter vid Reset/Rewrite st„ller blockstorleken vid
+     otypade filer (MS/PC-DOS).
+     Eventuell 4:e parameter vid Blockread/BlockWrite returnerar hur
+     m†nga block som verkligen har l„sts eller skrivits.
+     Read och ReadLn fungerar „ven tillsammans med ARRAY OF CHAR (MS/PC-DOS & CP/M-86).
+     Proceduren Seek kan anv„nda argument av typen REAL (MS/PC-DOS).
+     Funktionen SeekEoln.
+     Funktionen SeekEof.
+     Proceduren Truncate (MS/PC-DOS).
+
+     Overlayer
+     ---------
+     Overlayer kan anv„ndas „ven vid minneskompilering (MS/PC-DOS & CP/M-86).
+     Overlayfiler ”ppnas och st„ngs varje g†ng de anv„nds. De beh”ver
+     d„rf”r aldrig st„ngas med Close.
+
+
+     ™vrigt
+     ------
+     Proceduren ChDir (MS/PC-DOS).
+     M”jlighet att testa kommandoradsparametrar fr†n menyn f”r kompilerings-
+        val (MS/PC-DOS and CP/M-86).
+     Proceduren Delay „r oberoende av processorns hastighet (PC-DOS).
+     Proceduren Exit.
+     Ut”kade grafikprocedurer och funktioner (PC-DOS).
+     Proceduren GetDir (MS/PC-DOS).
+     Proceduren MkDir (MS/PC-DOS).
+     Flera EXTERNAL-deklarerade underprogram kan rymmas i en fil
+        (MS/PC-DOS & C/M-86).
+     Proceduren Halt kan anges med eventuell parameter som returnerar
+        felkod (PC/MS-DOS).
+     Proceduren OvrPath (MS/PC-DOS).
+     Proceduren OvrDrive (CP/M).
+     Funktionen ParamCount.
+     Funktionen ParamStr.
+     Proceduren RmDir (MS/PC-DOS).
+     Turtle grafik (PC-DOS)
+
+
+     Svenska TURBO PASCAL+
+     ---------------------
+     Žndrad syntax f”r deklaration och anrop av separatkompilerade, externa
+        underprogram.
+     Žndrad syntax f”r deklaration och anrop av procedurer och funktioner
+        som parametrar.
+
+
+     Filer som inte tas upp i manualen kapitel 1.
+     --------------------------------------------
+     ACCESS3  BOX    - endast f”r TOOLBOX-anv„ndare : uppdatering av
+                       ACCESS.BOX.
+
+     Exempel
+     -------
+     LISTER   PAS    - enkelt program f”r att lista filer p† printer.
+     CMDLIN   PAS    - h„mta parametrar fr†n kommandoraden.
+     DIRECT   PAS    - demonstrerar hanteringen av underbibliotek (PC/MS-DOS).
+
+     INTRPTCL DOC    - l„ser tiden fr†n DOS (PC/MS-DOS).
+     DOSFCALL DOC    - l„ser datum fr†n DOS (PC/MS-DOS).
+     EXTERNAL DOC    - anv„ndning av EXTERNAL.
+
+     CALC     PAS    - kalkylprogram i stil med VisiCalc etc.
+     CALC     HLP    - hj„lpfil kalkylprogram.
+     CALCDEMO MCS    - datafil till kalkylprogram (kan inte anv„ndas med
+                          TURBO-87 eller TURBOBCD)
+     CALCMAIN PAS    - extra huvudprogram f”r att kompilera kalkylprogram
+                       om minnet „r begr„nsat (se kommentar i CALCMAIN.PAS)
+
+     Endast IBM PC Turbon
+     --------------------
+     TURTLE   PAS    - demonstrerar Turtle grafiken.
+     ART      PAS    - grafikexempel
+     COLOR    PAS    - grafik med f„rg
+     SOUND    PAS    - Ljud p† PC:n
+     WINDOW   PAS    - F”nster p† PC:n
+
+
+     Filer som endast finns i svenska TURBO PASCAL+
+     ----------------------------------------------
+
+     SUBPAR.LIB   Hj„lpmodul f”r funktioner och procedurer som parametrar
+     SUBPAR.DOC   Dokumentation av SUBPAR.LIB. L„s denna fil!
+
+     EXT.LIB      Hj„lpmodul f”r att hantera externa f”rkompilerade
+                  procedurer/funktionxr
+     LOADEXT.INC  Includefil i EXT.LIB
+     EXT.DOC      Dokumentation av EXT.LIB. L„s denna fil!
+
+     EXTDEMO.PAS  Enkelt demo av f”rkompilering med EXT.LIB
+     TAN.EXT      Funktion som ska f”rkompileras till CHN-fil.
+                  Anropas av EXTDEMO.
+     MESS.EXT     Procedur som ska f”rkompileras till CHN-fil.
+                  Anropas av EXTDEMO.
+
+     TABELL.PAS   Mer avancerat program som utnyttjar f”rkompilering och
+                  funktioner som parametrar.
+     TABLE.MA     Includefil till TABELL.MA
+     INPINT.IN    Generell procedur f”r inmatning av heltal.
+                  Anv„nds av TABELL.MA
+     INPREAL.IN   Generell procedur f”r inmatning av flyttal.
+                  Anv„nds av TABELL.MA
+     NORMDIST.EXT Funktion som f”rkompileras till CHN-fil och kan
+                  laddas av TABELL.MA
+
+     REGS8086.LIB 8086/8088:ans registersupps„ttning.
+                  Anv„nds av procedurerna Intr och MsDos och Bdos.
+     UPCASE.LIB   Konverterar „ven svenska bokst„ver som †„” till versaler.
+                  Ers„tter standardfunktionen UpCase.
+     GETHMS.DOS   L„ser systemklockan under MS-DOS.
+     CLOCK.IBM    L„ser IBM:s klocka.
+     READDIR.DOS  L„ser filbiblioteket (MS-DOS/PC-DOS) p† ”nskad disk.
+     QUICK.SRT    Generell sorteringsprocedur enligt QuickSort
+     WRITEHEX.OUT Omvandlar decimala tal till hexadecimala och skriver dem
+                  p† ”nskad textfil.
+     WRITEBIN.OUT Omvandlar decimala tal till bin„ra och skriver dem
+                  p† ”nskad textfil.
+
+     HELP.PAS     Hj„lpprogram som kan k”ras frist†ende eller anropas fr†n
+                  turboeditorn.
+     HELP.DOC     Beskrivning av HELP.PAS. L„s denna fil!
+
+     XREF.EXT     Listprogram och korsreferensgenerator
+    (XREF.CHN)    F”rkompilerad dito som kan anropas fr†n HELP.
+     XREF.UTL     Includefil
+
+     ERAFILES.EXT Procedur f”r att radera filer.
+    (ERAFILES.CHN)F”rkompilerad dito som kan anropas fr†n HELP (PC-DOS).
+
+     COPYFILE.EXT Procedur f”r att kopiera filer.
+    (COPYFILE.CHN)F”rkompilerad dito som kan anropas fr†n HELP (PC-DOS).
+
+     RENFILE.EXT  Procedur f”r att „ndra namn p† filer.
+    (RENFILE.CHN) F”rkompilerad dito som kan anropas fr†n HELP (PC-DOS).
+
+     DISKFREE.EXT F”rkompilerad dito som kan anropas fr†n HELP.
+    (DISKFREE.CHN)Procedur som anger ledigt minne p†
+                  specificerad disk (PC-DOS).
+
+    (GRAFDEMO.PAS)Demo av grafiken i TURBO PASCAL ver 3.0 (PC-DOS).
+
+
+                         -------------------
+
+     8087-versionen av TURBO
+     -----------------------
+     TURBO-87 COM    - TURBO PASCAL kompilator med 8087 st”d.
+     TINST-87 COM    - Installationsprogram f”r TURBO-87.COM.
+     HILB     PAS    - demonstrerar ”kad hastighet och noggranhet hos
+                       TURBO-87.
+     TEST     PAS    - demonstrerar ”kad hastighet och noggranhet hos
+                       TURBO-87.
+
+     BCD-versionen av TURBO
+     ----------------------
+     TURBOBCD COM    - TURBO PASCAL kompilator med BCD-flyttal.
+     TINSTBCD COM    - Installationsprogram f”r TURBOBCD.COM.
+     BCD      PAS    - demonstrerar ”kad noggranhet hos TURBOBCD
+
+

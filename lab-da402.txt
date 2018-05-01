@@ -1,0 +1,12 @@
+Datalogi 10 p VT 87
+===================
+*-markerade är godkända och kan uppvisas
+
+*PU1 Uträkning och formatterad utskrift
+*PU2 Tabellutskrift
+*PU3 Växlingsprogram
+*PU4 Aritmetik med stora tal
+*PU5 Epidemisimulering
+*PU6 Filhantering
+*PU7 Bankprogram
+*PU8 Mastermind (Fortran)

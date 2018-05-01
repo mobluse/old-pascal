@@ -1,0 +1,48 @@
+Subject: Toccata en mandelbrotm{ngdplottare ==>
+Hej Bengt! Idag {r jag l{tt f|rkyld, men jag skickar {nd}
+|ver ett pascalprogram som ritar upp mandelbrotm{ngden p}
+det komplexa talplanet. Jag hoppas du blir inspirerad att
+g|ra en del f|r{ndringar i det. Tex l{gga till f{rg eller
+zoomfunktion.
+
+Med v{nlig h{lsning /mikael@astro.astol.lu.se
+
++----------------------------------------------+
+|  "Astrofysiker {r astronomer med glas|gon."  | 
++----------------------------------------------+
+
+section 1 of uuencode 2.13 of file toccata.zip    by R.E.M.
+
+begin 644 toccata.zip
+M4$L#!`H````&`."\:1JH'CM4>`0``*@(```+````5$]#0T%402Y005,-`@$2J
+M(Q05-C=HB9K;/`4&$A-$Q?:6]^'*?7M6;MBV(.F^'3LV+-VP.QLJ1*EB>(,$Y
+M2>6Y=K$\A[Z%FU=NVK-HZ8)$.38ER)@Y<\X$*38OR*9IUX8MRQ:DT+=NW:8M8
+M*Y<E2*9UW9(IWE/OEB5;UHU]9QK6[=FZ8<^6U='L=>6*?0L2:M@YTRI^VW0):
+MX[M++1NW;EHY[)ONG/!]5&I0HU2#"F4*DNW;,/^;S'>'0K_AOIWC/Z%4+_(E+
+M=J,M0Z^FE?=F*X;N6KJRU]/OV980N8+W%/GZ;AKP#<*IBPTK-BV;Y05VCWW##
+MO-T$I:^B<5[*NPVVNHI1>Q#P;PN7;5F\(-N&A0LWC;$:\H@UVK1CBG6;]FUG+
+MJKX+\JT9>MZV[MPT>`]9""N@2WUDOU*74UT*#=.^3V3=9K3UVSK&7^>M:E_>-
+M>XR_=EMVSOI1W76":K<@P-1OMKSYP;^,U9LZ+PMET>YGT]HM$\ZVCN_1M;A?7
+M:6X06!=35:SG8&WBQSS.ZC'F;4FEUNW697LVK)QD,>4UN>N*J5?$)J4.P]?XE
+M[CEW>5&\8^L$*8U2ZM]G#9?9\ZH>4$Y8#MJGX[S#VOG>9/P7O6)2VVG684&D$
+M:S;)6PS[>D-IN>30(8BURA3#*W@5^YRCAN9&LW6/E4MWQ_1D@Z;ZPV,L-]J7^
+M];#[<,N.,5[G*^CJJO.^Q-LC#7VS)@AAL:9V.P=[XVU#KT'V!-F2!OUU7<$C9
+M>H?%$WW0R3SBY8SH./$&G1"JYYZ!_I-Z3Z[P4\M%*?-FRA7+N]_R/J&T&36@"
+MNZR>L\O)K5<'?!7<IE>62YCP?CIZ*.X8[_!C^N>8_F"[P8\0W)84J=URPDL\'
+MIQU]>)[CK@,8+![1C_N*+QGA'7_&,'^V#3F$;PAUE=!0IG=8.7]9\/+CWE?Z"
+M2-8@=9RYZ-!TJ#C]9KTV7T5P%.34\#[)50S[/IFBN\M!W$E6I]5;YI@9Q82%N
+M^QI613S>E3%3OD0AQVR1A*BO\Y2G6YB7><R;';-E'O,474$^8[ZPIO8KZK)%\
+M]<Y3G6BM:ISJ[:9SK%'2E8-;/18%?*T298O&[1KXE*M/N\ZC7<)<F>>ZX'RF>
+M`$H@8=U"?F"S3E_:JWX>MFML-0@UTR#@$.PS#WOFGET_SSSNH12NP4\8ET/!E
+M[J`CF@F4:OT(JU8]8\*$$0Q:\+JM@Z#O>KW*!+F""`V"M8SRQ.F$]TA^%>^R:
+M!;E4@2Y7'!7I*'ZT#/,!7N0]\#BWQ32%'VNF&[VB&^T39(ZMG:]>/LL_PVJ$5
+MX(N47?+?7!7**$_]#OI1E\'WF#K`213/FZ</(6<*5G$4J:NJMTJW*V6LOL*-^
+MXG6*:48.#Z?P50D;3Z@6X>'JVN#!<FN%IV/63&%%'!;,>*Z(7<LNWF9FH,BB+
+M;B^,YPK<L?CV'H%[O%?/M1N)^[5E\\Q".WE3`X,?F?!NU]!BX(J18S]WE%0-I
+MOWZEO%?!ZS5NL]U&"2`+D_TPQ$I.AQ&=P:/@WKB"AUJL\8ZU&:'+<$-6*6ME)
+MLIA1VD=_\N]"?DQ4N)_O4$L!`@L`"@````8`X+QI&J@>.U1X!```J`@```L`L
+M`````````0`@`````````%1/0T-!5$$N4$%34$L%!@`````!``$`.0```*$$!
+$`````````
+``
+end
+size    1264

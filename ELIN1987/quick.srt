@@ -1,0 +1,143 @@
+(**************************************************************************
+Filnamn                : QUICK.SRT
+Ver                    : 2.0
+Copyright              : 1984 - 85 DATABITEN
+Klass                  : Sortering
+PASCAL version         : TURBO 8086
+Biblioteksnamn         : QuickSort
+Globala identifierare    (i=import e=export l=lokal)
+                 TYPE  : i: Item:
+                         i: ArrayOfItems
+                  VAR  :
+             PROCEDURE : e: QuickSort
+             FUNCTION  :
+Include-filer          :
+Kod-storlek            : bytes
+Benchmark              : (8088: 4.77 MHz):
+                         4000/8000 heltal: 12.2/25.2 s
+                         2000/4000 flyttal: 12/26 s
+                         1000 string[20]: 8.3 s
+                         med $R-,U- ,K-
+
+Beskrivning            :
+
+Sorterar de n fîrsta elementen i ett fÑlt, typ ArrayOfItem,
+med elementtyp Item i stigande eller fallande ordning med avseende
+pÜ nÜgon nyckel i elementen. Sorteringsvillkoret skrivs som en
+boolesk funktion typ
+
+FUNCTION InOrder(VAR a,b:Item):BOOLEAN;
+
+och skickas som funktionsparameter till QuickSort.
+
+OBSERVERA att parametrarna i den booleska funktionen mÜste VAR-
+deklareras. I annat fall hÑnger sig datorn.
+VAR-deklarationen av parametrarna fîrkortar exekveringstiden vid
+stora Item-typer.
+
+En rekursiv QuickSort-algoritm enligt Wirth: "Algoritms +
+DataStructures = Program" anvÑnds.
+
+Ex:
+
+TYPE
+   Person = RECORD
+               namn: STRING(.25.);
+               alder: 0..130;
+            END;
+   PersonRegister = ARRAY[1..5] OF Person;
+
+   Item = Person;                   (Deklarationer QuickSort behîver)
+   ArrayOfItems = PersonRegister;
+
+
+($I QUICK.SRT )
+
+VAR
+   reg: PersonRegister;
+   i: INTEGER;
+
+FUNCTION StringLT(VAR a,b: Person): BOOLEAN;  ( InOrder-villkor)
+BEGIN
+   StringLT:= a.namn < b.namn
+END;
+
+FUNCTION StringGT(VAR a,b: Person): BOOLEAN;   ( InOrder-villkor)
+BEGIN StringGT:= a.namn > b.namn
+END;
+
+BEGIN
+   reg(.1.).namn:= 'Hans'; reg(.1.).alder:= 15;
+   reg(.2.).namn:= 'Ulla'; reg(.2.).alder:= 25;
+   reg(.3.).namn:= 'Erik'; reg(.3.).alder:= 35;
+   reg(.4.).namn:= 'ôsten';reg(.4.).alder:= 45;
+   reg(.5.).namn:= 'èsa';  reg(.5.).alder:= 55;
+
+   QuickSort(reg,5,Ofs(StringLT));   ( Sortera i stigande ordning )
+
+   FOR i:= 1 TO 5 DO WriteLn(reg(.i.).namn,'  ',reg(.i.).alder);
+   WriteLn;
+
+   QuickSort(reg,5,Ofs(StringGT));   ( Sortera i fallande ordning )
+
+   FOR i:= 1 TO 5 DO WriteLn(reg(.i.).namn,'  ',reg(.i.).alder);
+
+END.
+***************************************************************************)
+
+(*$K-*)
+
+PROCEDURE QuickSort(VAR a:ArrayOfItems;      (* fÑlt som ska sorteras *)
+                        n:INTEGER;           (* element 1..n sorteras *)
+                        ofsInOrder:INTEGER); (* offset aktuell funktion LT *)
+
+
+(* ---------------------------- SUBPAR.LIB --------------------------------*)
+
+PROCEDURE Sub; BEGIN END;
+
+PROCEDURE AssignSub(ofsFormalSub,ofsActualSub:INTEGER);
+
+VAR d:INTEGER;
+
+BEGIN
+
+   mem(.Cseg:ofsFormalSub.):= $E9;
+   d:= ofsActualSub - ofsFormalSub -  3;
+   memW(.Cseg:ofsFormalSub + 1.):= d;
+
+END (* AssignSub *);
+
+(* ------------------------- SLUT SUBPAR.LIB -------------------------------*)
+
+FUNCTION InOrder(VAR a,b:Item):BOOLEAN; BEGIN Sub END;
+(* TRUE om a och b Ñr i rÑtt ordning *)
+
+TYPE Index = 0..maxInt;
+
+   PROCEDURE Sort(l,r:Index);
+   VAR
+      i,j: Index;
+      x,temp: Item;
+   BEGIN
+      i:= l;
+      j:= r;
+      x:= a(.(l + r) DIV 2.);
+      REPEAT
+         WHILE InOrder(a(.i.),x) DO i:= Succ(i);
+         WHILE InOrder(x,a(.j.)) DO j:= Pred(j);
+         IF i <= j THEN BEGIN
+            temp:= a(.i.); a(.i.):= a(.j.); a(.j.):= temp;
+            i:= Succ(i);
+            j:= Pred(j);
+         END (* IF *);
+      UNTIL i > j;
+      IF l < j THEN Sort(l,j);
+      IF i < r THEN Sort(i,r)
+   END (* Sort *);
+
+BEGIN (* QuickSort *)
+  AssignSub(Ofs(InOrder),ofsInOrder);
+  Sort(1,n)
+END (* QuickSort *);
+

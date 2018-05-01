@@ -1,0 +1,31 @@
+1. A:LAB-ELIN.PAS(2)
+{$U+,C+}
+^
+Directives A,B,C,D,F,G,P,U,W,X are obsolete or changed in meaning
+
+The following Turbo 3.0 directives are obsolete:
+
+  A  Absolute code (CP/M-80)
+  C  Control-C checking (see CheckBreak)
+  G  Get from standard input (now the default)
+  P  Put to standard output (now the default)
+  U  User break checking (not supported)
+  W  nesting of With statements (CP/M-80)
+  X  array optimization (CP/M-80)
+
+The following Turbo 3.0 directives now have different meanings:
+
+  B  now controls short-circuiting of Boolean expressions
+  D  now controls generation of Debug files
+  F  now controls generation of Far calls
+
+The following Turbo 3.0 directive has been renamed:
+
+  K  stacK checking is now controlled with the $S+ and $S- directives
+
+The UPGRADE utility program automatically converts, removes and/or
+disables compiler directives as required.
+
+See Appendix C of the Turbo Pascal 4.0 Owner's Handbook for more details.
+-------------------------------------------------------------------------------
+

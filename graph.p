@@ -1,0 +1,48 @@
+CONST
+  north = 0;
+  east  = 90;
+  south = 180;
+  west  = 270;
+
+PROCEDURE Graphics;                                   EXTERNAL 'a:\graph.bin';
+PROCEDURE GraphMode;                                  EXTERNAL Graphics[0];
+PROCEDURE GraphColorMode;                             EXTERNAL Graphics[3];
+PROCEDURE HiRes;                                      EXTERNAL Graphics[6];
+PROCEDURE HiResColor(color: INTEGER);                 EXTERNAL Graphics[9];
+PROCEDURE Palette(n: INTEGER);                        EXTERNAL Graphics[12];
+PROCEDURE GraphBackground(color: INTEGER);            EXTERNAL Graphics[15];
+PROCEDURE GraphWindow(x1,y1,x2,y2: INTEGER);          EXTERNAL Graphics[18];
+PROCEDURE Plot(x,y,color: INTEGER);                   EXTERNAL Graphics[21];
+PROCEDURE Draw(x1,y1,x2,y2,color: INTEGER);           EXTERNAL Graphics[24];
+PROCEDURE ColorTable(c1,c2,c3,c4: INTEGER);           EXTERNAL Graphics[27];
+PROCEDURE Arc(x,y,angle,radius,color: INTEGER);       EXTERNAL Graphics[30];
+PROCEDURE Circle(x,y,radius,color: INTEGER);          EXTERNAL Graphics[33];
+PROCEDURE GetPic(VAR buffer; x1,y1,x2,y2: INTEGER);   EXTERNAL Graphics[36];
+PROCEDURE PutPic(VAR buffer; x,y: INTEGER);           EXTERNAL Graphics[39];
+FUNCTION  GetDotColor(x,y: INTEGER): INTEGER;         EXTERNAL Graphics[42];
+PROCEDURE FillScreen(color: INTEGER);                 EXTERNAL Graphics[45];
+PROCEDURE FillShape(x,y,fillCol,borderCol: INTEGER);  EXTERNAL Graphics[48];
+PROCEDURE FillPattern(x1,y1,x2,y2,color: INTEGER);    EXTERNAL Graphics[51];
+PROCEDURE Pattern(VAR p);                             EXTERNAL Graphics[54];
+PROCEDURE Back(dist: INTEGER);                        EXTERNAL Graphics[57];
+PROCEDURE ClearScreen;                                EXTERNAL Graphics[60];
+PROCEDURE Forwd(dist: INTEGER);                       EXTERNAL Graphics[63];
+FUNCTION  Heading: INTEGER;                           EXTERNAL Graphics[66];
+PROCEDURE HideTurtle;                                 EXTERNAL Graphics[69];
+PROCEDURE Home;                                       EXTERNAL Graphics[72];
+PROCEDURE NoWrap;                                     EXTERNAL Graphics[75];
+PROCEDURE PenDown;                                    EXTERNAL Graphics[78];
+PROCEDURE PenUp;                                      EXTERNAL Graphics[81];
+PROCEDURE SetHeading(angle: INTEGER);                 EXTERNAL Graphics[84];
+PROCEDURE SetPenColor(color: INTEGER);                EXTERNAL Graphics[87];
+PROCEDURE SetPosition(x,y: INTEGER);                  EXTERNAL Graphics[90];
+PROCEDURE ShowTurtle;                                 EXTERNAL Graphics[93];
+PROCEDURE TurnLeft(angle: INTEGER);                   EXTERNAL Graphics[96];
+PROCEDURE TurnRight(angle: INTEGER);                  EXTERNAL Graphics[99];
+PROCEDURE TurtleDelay(delay: INTEGER);                EXTERNAL Graphics[102];
+PROCEDURE TurtleWindow(x,y,w,h: INTEGER);             EXTERNAL Graphics[105];
+FUNCTION  TurtleThere: BOOLEAN;                       EXTERNAL Graphics[108];
+PROCEDURE Wrap;                                       EXTERNAL Graphics[111];
+FUNCTION  Xcor: INTEGER;                              EXTERNAL Graphics[114];
+FUNCTION  Ycor: INTEGER;                              EXTERNAL Graphics[117];
+
